@@ -1,0 +1,329 @@
+---
+auth:
+  # A private key used for signing jwt tokens
+  # Easily generate one by running
+  # $ openssl genrsa -out jwt.pem 2048
+  jwtPrivateKey: |
+    -----BEGIN RSA PRIVATE KEY-----
+    YOUR-KEY-HERE
+    -----END RSA PRIVATE KEY-----
+  # The public key used for verifying the signature
+  # Generate one by running
+  # $ openssl rsa -in jwt.pem -pubout -out jwt.pub
+  jwtPublicKey: |
+    -----BEGIN PUBLIC KEY-----
+      MIIEpQIBAAKCAQEAx/4SAay9l2VllqldlgQWqACq5J9hPPKTmDusZ7lamqs6UjZr
+      7hS9F87K+VvsAPUlfNrbMIiO4XmL/b7qMzixx8ehGKyxFkagkoh85zvDl9vTqZEP
+      +RyxXjKOlhbVOnNrXccFh6O6jcxkEk3aXPx2yFpobh1Jd+UZEr5I6CqGUB35nfZ8
+      CH99U/rh9zeeciOoFQTgFTXp0yUX7e+a3xn+rYuZ4rfLjiP5oLoA6J0DTdYv9iln
+      1Ys283ekJZSKE5tHX7WdEgKS5mTr9pcjrQQ6yhuy8ooo9cd4gYORZ+5OdClBkC5v
+      ejkBWXpz/wjgMiKb3MoYtlXktSUXQBwEoSev6QIDAQABAoIBAQC90k1NAaRCGp+9
+      zKtjRCYs99U8gnpM2wF0MM+G88snmvYUKktvAogoHMNSwwjSL9yRETmSa0sSf8d7
+      5MVuMJWtRbGGNgMvXYHzE1FaOMOBU8km3OUIUU+YVOw5URq6C+sQa2K4R5M+G42w
+      QezM7WPg7s7IFUwyXGTcAXg5xIMPbnZxuV1BXIE1R53jiojbu/H27E2SxAYqdRtN
+      h1FGDkRP31IxLMh489aFaVcsRx9jeIad+1qZtHPjfRRAbEs7W70R/GjPKsRjeRR0
+      F8fUamN1aSqk+NWd/Vlg3YT9L00lb2GTywM5+e6fSWTs73M4UbMO6UiVGVrXne+1
+      2RkKrsgBAoGBAOZBCI5s9TuZSEggo/5mXM32yX4b1CBAGeUNnKWJp13TfMvpTDkx
+      BAvGk4i0TpsLPZaBa2YcCxVCXcHwYVFzSPgAcYYRTXOKUs4g2Ozn5Uhdk9QjspCV
+      HoIvtvHPcbwE/m5jCTR3Bqz3JNyLGcTc6qTWLODFDZnUaM5DgbCva47BAoGBAN5a
+      zn1w5XZAh7Ahk1wyaOFRDqMVxbUq9S6NaSui2pNtLg6vKhy4LLB12RzElgBwuQ3I
+      S4cgxTMPNc3fAMRGR2CmbMnt+bzf/avMTzHdEFy4PJsj+BjRk63xkTReJOs+VsQV
+      iVsxCdSqzMJG/cYTy4Qeaq6wdrLyR95t6D84NZMpAoGBANxbYNTtccSX7ZUZp9jQ
+      HgD/LdaCy4AR2LZdUI0cMBCbVdPQciJJxpV+dbNe29uF5msjcKVIMVMnMJNqebh5
+      nFu8EOk9peHtf1HGHdScGdInvFJJ15qHG6t7/pls7mwCW31JSoXrY3glDiIC/aZp
+      xiX60vhJnbqajbLY6EUvnMABAoGBAJIZ7I/z/HIE2KNcjG0KGmviTNHP3oa54Txj
+      YnVvnls8ZAT2B5+zTHnuFWiXq1BCwPVTZH03hRuVpO7O1rwgyYmyEM1l9rCqJQ4b
+      QvYqoTOrQvdVXRFBs92ZWqWkLnH8FhrlY8ltoV4BlGUbLGhYXWNEcSizfmr6U0rN
+      wMq5bkpxAoGAeRXPdYU3/Ce3SIwM6+IOUnnM61ksx82Y5VRo/7stSMg7MEOIZRo5
+      WxqKJZaP6OIFKm+1Y6A+CdbSf3XPROqVN8sXKLoNb0OTXumDMXtTd4p6xtF1Qhan
+      fF2cbsgsjULqgwVAoKQMBLHJfsF4ELZS8tMRKxeGIUEsFWRdQ602EoU=
+    -----END PUBLIC KEY-----
+  jwtQueueServicePublicKey: |
+    -----BEGIN PUBLIC KEY-----
+      MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAx/4SAay9l2VllqldlgQW
+      qACq5J9hPPKTmDusZ7lamqs6UjZr7hS9F87K+VvsAPUlfNrbMIiO4XmL/b7qMzix
+      x8ehGKyxFkagkoh85zvDl9vTqZEP+RyxXjKOlhbVOnNrXccFh6O6jcxkEk3aXPx2
+      yFpobh1Jd+UZEr5I6CqGUB35nfZ8CH99U/rh9zeeciOoFQTgFTXp0yUX7e+a3xn+
+      rYuZ4rfLjiP5oLoA6J0DTdYv9iln1Ys283ekJZSKE5tHX7WdEgKS5mTr9pcjrQQ6
+      yhuy8ooo9cd4gYORZ+5OdClBkC5vejkBWXpz/wjgMiKb3MoYtlXktSUXQBwEoSev
+      6QIDAQAB
+    -----END PUBLIC KEY-----
+  # A password used for encrypting session data.
+  # **Needs to be minimum 32 characters**
+  cookiePassword: WOW-ANOTHER-INSECURE-PASSWORD!!!
+  # A password used for encrypting stored pipeline secrets and user Oauth token.
+  # **Needs to be minimum 32 characters**
+  encryptionPassword: WOW-ANOTHER-MORE-INSECURE-PASSWORD!!!
+  # A password used for hashing user/pipeline access tokens.
+  # **Needs to be minimum 32 characters**
+  hashingPassword: WOW-ANOTHER-MORE-INSECURE-PASSWORD!!!
+  # A flag to set if the server is running over https.
+  # Used as a flag for the OAuth flow
+  https: false
+  # A flag to set if you want guests to browse your pipelines
+  allowGuestAccess: false
+  # Whitelist of users able to authenticate against the system
+  # if empty, it allows everyone
+  whitelist: []
+  admins: []
+  # Default session timeout (in minutes)
+  sessionTimeout: 120
+  # SameSite Cookie Option
+  sameSite: Strict
+
+httpd:
+  # Port to listen on
+  port: 8080
+  # Host to listen on (set to localhost to only accept connections from this machine)
+#  host: 0.0.0.0
+  # Externally routable URI (usually your load balancer or CNAME)
+  uri: http://localhost:8080
+  # SSL Support
+#  tls: false
+    # If you want SSL, you can easily add it by replacing `tls: false` with an object that
+    # provides the options required by `tls.createServer`
+    # https://nodejs.org/api/tls.html#tls_tls_createserver_options_secureconnectionlistener
+    # key: |
+    #   PRIVATE KEY HERE
+    # cert: |
+    #   YOUR CERT HERE
+
+datastore:
+  plugin: sequelize
+  ddlSyncEnabled: "true"
+  sequelize:
+    # Type of server to talk to
+    dialect: sqlite
+    # More arguments here:
+    # http://docs.sequelizejs.com/en/latest/api/sequelize/
+    ssl: false
+    pool: {}
+    retry: {}
+    buildMetricsEnabled: "false"
+    # readOnly datastore config
+    # readOnly: {}
+
+executor:
+  # Default executor
+  plugin: k8s
+  k8s:
+    enabled: true
+    options:
+      kubernetes:
+        # The host or IP of the kubernetes cluster
+        host: kubernetes.default
+        # The jwt token used for authenticating kubernetes requests
+        # Loaded from /var/run/secrets/kubernetes.io/serviceaccount/token by default
+        # Resources for build pod
+        resources:
+          # Number of cpu cores
+          cpu:
+            micro: "0.5"
+            low: 2
+            high: 6
+          # Memory in GB
+          memory:
+            micro: 1
+            low: 2
+            high: 12
+        # Default build timeout for all builds in this cluster (in minutes)
+        buildTimeout: 90
+        # Default max build timeout (in minutes)
+        maxBuildTimeout: 120
+        # k8s node selectors for approprate pod scheduling
+        nodeSelectors: {}
+        preferredNodeSelectors: {}
+        # support for kata-containers-as-a-runtimeclass
+        runtimeClass: ""
+    # Launcher image to use
+    launchImage: screwdrivercd/launcher
+    # Container tags to use
+    launchVersion: stable
+  # nomad:
+  #   enabled: true
+  #   options:
+  #     nomad:
+  #       # The host or IP of the nomad cluster
+  #       host: nomad.default/v1/jobs
+  #       resources:
+  #         cpu:
+  #           high: 200
+  #         memory:
+  #           high: 2000
+  #     # Container tags to use
+  #     launchVersion: stable
+  docker:
+    enabled: true
+    options:
+      # Dockerode configuration https://github.com/apocas/dockerode#getting-started
+      docker: {}
+      # Container tags to use
+      launchVersion: stable
+  k8s-vm:
+    enabled: true
+    options:
+      # Configuration of Docker
+      kubernetes:
+        # The host or IP of the kubernetes cluster
+        host: kubernetes.default
+        # The jwt token used for authenticating kubernetes requests
+        # Loaded from /var/run/secrets/kubernetes.io/serviceaccount/token by default
+        # Resources for build pod
+        resources:
+          # Number of cpu cores
+          cpu:
+            micro: 1
+            low: 2
+            high: 6
+          # Memory in GB
+          memory:
+            micro: 1
+            low: 2
+            high: 12
+        # Default build timeout for all builds in this cluster (in minutes)
+        buildTimeout: 90
+        # Default max build timeout (in minutes)
+        maxBuildTimeout: 120
+        # k8s node selectors for approprate pod scheduling
+        nodeSelectors: {}
+        preferredNodeSelectors: {}
+      # Launcher image to use
+      launchImage: screwdrivercd/launcher
+      # Launcher container tag to use
+      launchVersion: stable
+#   jenkins:
+#     options:
+#       # Configuration of Jenkins
+#       jenkins:
+#         host: jenkins.default
+#         port: 8080
+#         username: screwdriver
+#         password: "WOW-AN-EVEN-MORE-INSECURE-PASSWORD!!!!"
+#         # Default build timeout (in minutes)
+#         buildTimeout: 90
+#         # Default max build timeout (in minutes)
+#         maxBuildTimeout: 120
+  queue:
+    enabled: true
+    options:
+      # Configuration of the redis instance containing resque
+      redisConnection:
+        host: "127.0.0.1"
+        port: 9999
+        options:
+          password: "THIS-IS-A-PASSWORD"
+          tls: false
+        database: 0
+
+scms:
+   github:
+     plugin: github
+     config:
+       # The client id used for OAuth with github. Look up GitHub OAuth for details
+       # https://developer.github.com/v3/oauth/
+       oauthClientId: b04e724643c0d7eb3ae7
+       # The client secret used for OAuth with github
+       oauthClientSecret: 3614aa9b7be15bd0bd65cb05437feb208d623ef5
+#       # You can also configure for use with GitHub enterprise
+#       # gheHost: github.screwdriver.cd
+#       # The username and email used for checkout with github
+#       username: sd-buildbot
+#       email: dev-null@screwdriver.cd
+#       # Token for writing PR comments in Github, needs public_repo scope
+#       commentUserToken: A-BOT-GITHUB-PERSONAL-ACCESS-TOKEN
+#       # Secret to add to GitHub webhooks so that we can validate them
+       secret: dasdadasdadasd
+#       # Whether it supports private repo: boolean value.
+#       # If true, it will ask for read and write access to public and private repos
+#       # https://developer.github.com/v3/oauth/#scopes
+#       privateRepo: false
+#   bitbucket:
+#     plugin: bitbucket
+#     config:
+#       oauthClientId: YOUR-BITBUCKET-OAUTH-CLIENT-ID
+#       oauthClientSecret: YOUR-BITBUCKET-OAUTH-CLIENT-SECRET
+#       # The username and email used for checkout with bitbucket
+#       username: sd-buildbot
+#       email: dev-null@screwdriver.cd
+#   gitlab:
+#     plugin: gitlab
+#     config:
+#       oauthClientId: YOUR-GITLAB-OAUTH-CLIENT-ID
+#       oauthClientSecret: YOUR-GITLAB-OAUTH-CLIENT-SECRET
+#       # If you have on-premise gitlab, you can specify that here
+#       # gitlabHost: mygitlab.com
+#       # gitlabProtocol: https
+#       # The username and email used for checkout with gitlab
+#       # username: sd-buildbot
+#       # email: dev-null@screwdriver.cd
+webhooks:
+  # Obtains the SCM token for a given user. If a user does not have a valid SCM token registered with Screwdriver, it will use this user's token instead.
+  username: sd-buildbot
+  # Ignore commits made by these users
+  ignoreCommitsBy: []
+  # Restrict PR: all, none, branch, or fork
+  restrictPR: none
+  # Chain PR: true or false
+  chainPR: false
+  # Upper limit on incoming uploads to builds
+  maxBytes: 1048576 # 1MB
+
+coverage:
+  default: true
+  # plugin: sonar
+  # sonar:
+  #   sdApiUrl: https://api.screwdriver.cd
+  #   sonarHost: https://sonar.screwdriver.cd
+  #   adminToken: your-sonar-admin-token
+  #   sdUiUrl: https://cd.screwdriver.cd
+
+multiBuildCluster:
+  # Enabled multi build cluster feature or not
+  enabled: false
+
+bookends:
+  # Plugins for build setup
+  setup:
+    - scm
+    - screwdriver-cache-bookend
+  teardown:
+    - screwdriver-artifact-bookend
+    - screwdriver-cache-bookend
+
+notifications:
+  # Email notification when a build finishes
+  # email:
+  #   host: email-host
+  #   port: email-port
+  #   from: email-address-to-send-from
+  #   username: optional-username
+  #   password: optional-password
+  # Slack notification when build finishes
+  # slack:
+  #   token: your-slack-bot-token
+ecosystem:
+  # Externally routable URL for the User Interface
+  ui: http://localhost:4200
+  # Externally routable URL for the Artifact Store
+#  store: https://store.screwdriver.cd
+#  # Externally routable URL for the Queue Service
+#  queue: https://queue.screwdriver.cd
+#  # Badge service (needs to add a status and color)
+#  badges: https://img.shields.io/badge/{{subject}}-{{status}}-{{color}}.svg
+#  # Default registry to pull build containers from. Uses Docker Hub if nothing/empty string is provided
+#  dockerRegistry: ""
+#  # Extra origins allowed to do CORS to API
+#  allowCors: []
+#  # build cache strategies: s3, disk, with s3 as default option to store cache
+#  cache:
+#    strategy: "s3"
+#    path: "/"
+#    compress: false
+#    md5check: false
+#    max_size_mb: 0
+
+# default cluster environment variables to inject into builds
+build:
+  environment:
+    SD_VERSION: 4
+  externalJoin: false
